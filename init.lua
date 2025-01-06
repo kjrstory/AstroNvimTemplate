@@ -17,3 +17,16 @@ end
 
 require "lazy_setup"
 require "polish"
+
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cpp",
+    callback = function()
+        vim.opt_local.textwidth = 80
+    end,
+})
+
+vim.opt.tabstop = 4        -- 탭 문자를 4칸으로 표시
+vim.opt.shiftwidth = 4     -- 자동 들여쓰기에서 4칸 사용
+vim.opt.expandtab = true   -- 탭을 공백으로 변환
+
